@@ -202,7 +202,7 @@ public class MktProductDetailServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {  
         ProductImageDAO pid = new ProductImageDAO();
         ProductDAO pd = new ProductDAO();
         ProductSizeDAO ps = new ProductSizeDAO();

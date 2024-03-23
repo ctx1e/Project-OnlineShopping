@@ -54,7 +54,18 @@ public class ComUpdateAvatarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Part filePart = (Part) request.getPart("avatar"); // "image" là tên của input file
-
+try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ComUpdateAvatarServlet</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ComUpdateAvatarServlet at " + filePart.getSize() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
         InputStream fileContent = filePart.getInputStream();
         String avatar = encodeImageToBase64(fileContent);
 
